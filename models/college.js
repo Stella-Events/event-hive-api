@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import {toJSON} from '@reis/mongoose-to-json'
+
 const collegeSchema = new Schema({
     name:{ type: String, required: true},
     description:{ type: String, required: true},
@@ -11,5 +11,4 @@ const collegeSchema = new Schema({
     timestamps:true
 });
 
-collegeSchema.plugin(toJSON)
 export const CollegeModel = model('College', collegeSchema)

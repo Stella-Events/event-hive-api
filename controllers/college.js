@@ -5,7 +5,7 @@ export const postColleges = async (req,res,next) => {
  //sending request
  try {
     const addcolleges = await CollegeModel.create({...req.body,
-        banner: req.file.filename});
+        image: req.file.filename});
    
      //response
      res.status(201).json(addcolleges);
