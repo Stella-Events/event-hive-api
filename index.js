@@ -1,17 +1,17 @@
 import express from "express";
 import { dbConnection } from "./config/db.js";
 import eventRouter from "./routes/event_routes.js";
+import collegeRouter from "./routes/college.js";
 
 // Create express app
 const app = express ();
 
-// use Router
-app.use(eventRouter)
-
-
 // use middleware
 app.use(express.json());
 
+// Use routes
+app.use(collegeRouter);
+app.use(eventRouter)
 
 // Call database
 dbConnection();
